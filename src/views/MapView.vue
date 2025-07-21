@@ -32,7 +32,7 @@ import dockImage from '../assets/background-intervillas.jpg'
 import TeaserVilla from '@/components/TeaserVilla.vue'
 import { fetchMapData, ClusterRenderer } from '@/components/map'
 import { MarkerClusterer, SuperClusterAlgorithm } from '@googlemaps/markerclusterer'
-import poiIcon from '@/assets/poi.png'
+//import poiIcon from '@/assets/poi.png'
 import {useI18n} from 'vue-i18n'
 
 const mapContainer = ref(null)

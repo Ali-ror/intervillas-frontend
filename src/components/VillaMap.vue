@@ -5,7 +5,7 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import {fetchMapData} from './map';
-import poi from '../assets/poi.png';
+//import poi from '../assets/poi.png';
 
 const props = defineProps({
     lat: {type: Number, default: null},
