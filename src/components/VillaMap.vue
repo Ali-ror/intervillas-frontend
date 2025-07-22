@@ -45,8 +45,7 @@ const initMap = (maps) => {
 }
 
 onMounted(() => {
-  const baseURL = process.env.VILLA_API_BASE_URL; // e.g., http://localhost:3000
-  fetchMapData(`${baseURL}${props.villaId}/map`, initMap);
+    fetchMapData(`https://api.systembitz.com/${props.villaId}/map`, initMap);
 })
 </script>
 

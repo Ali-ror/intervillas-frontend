@@ -4,7 +4,7 @@ import Fuse from 'fuse.js'
 const villasData = ref(null)
 let fuseInstance = null
 
-export function useFuseSearch(sourceURL = '${process.env.VILLA_API_BASE_URL}/api/villas/prefetch.json') {
+export function useFuseSearch(sourceURL = 'https://api.systembitz.com/api/villas/prefetch.json') {
   const fetchVillas = async () => {
     if (!villasData.value) {
       const res = await fetch(sourceURL)

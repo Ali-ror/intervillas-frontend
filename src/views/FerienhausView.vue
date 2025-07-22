@@ -31,7 +31,7 @@ const handleSearch = async () => {
   const [startDate, endDate] = dateRange.value || []
   if(!startDate || !endDate) return
   try{
-    const response =await axios.post('${process.env.VILLA_API_BASE_URL}/vacation-rentals-cape-coral/search', {
+    const response =await axios.post('https://api.systembitz.com/vacation-rentals-cape-coral/search', {
         start_date: startDate.toISOString().split('T')[0],
         end_date: endDate.toISOString().split('T')[0],
         people: people.value,
@@ -50,7 +50,7 @@ watch(villa_arr, (newVal) => {
 })
 
 onMounted(async () => {
-  const response = await axios.get('${process.env.VILLA_API_BASE_URL}/ferienhaus-cape-coral');
+  const response = await axios.get('https://api.systembitz.com/ferienhaus-cape-coral');
   if(response) {
     villa_arr.value = response.data
   }
@@ -63,7 +63,7 @@ onMounted(async () => {
     await handleSearch();
   }
 
-  // const res = await axios.get('http://localhost:3000/ferienhaus-cape-coral/unavailable_dates.json')
+  // const res = await axios.get('https://api.systembitz.com/ferienhaus-cape-coral/unavailable_dates.json')
   // if(res) {
   //   unavailableDates.value = res.data.map(d => new Date(d));
   //   console.log(unavailableDates.value,'blocked_date')

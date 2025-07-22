@@ -59,7 +59,7 @@ import boat3Image from '../assets/boot-3.jpg'
 const boats = ref([]);
 
 onMounted(async () => {
-  const response = await axios.get('${process.env.VILLA_API_BASE_URL}/boats.json');
+  const response = await axios.get('https://api.systembitz.com/boats.json');
   if(response) {
     boats.value = response.data
   }
