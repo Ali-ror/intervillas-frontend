@@ -53,7 +53,7 @@ import villa3Image from '../assets/villa-3.jpg'
 const villas = ref([])
 
 onMounted(async () => {
-  const response = await axios.get('http://localhost:3000/ferienhaus-cape-coral');
+  const response = await axios.get('${process.env.VILLA_API_BASE_URL}/ferienhaus-cape-coral');
   if(response) {
     villas.value = response.data
   }

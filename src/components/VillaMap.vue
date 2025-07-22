@@ -45,7 +45,8 @@ const initMap = (maps) => {
 }
 
 onMounted(() => {
-    fetchMapData(`http://localhost:3000${props.villaId}/map`, initMap)
+  const baseURL = process.env.VILLA_API_BASE_URL; // e.g., http://localhost:3000
+  fetchMapData(`${baseURL}${props.villaId}/map`, initMap);
 })
 </script>
 

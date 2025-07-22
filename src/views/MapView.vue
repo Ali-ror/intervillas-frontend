@@ -93,7 +93,7 @@ async function initMap(googleMaps, payload) {
 
 onMounted(async () => {
   await nextTick()
-  await fetchMapData('http://localhost:3000/karte', initMap)
+  await fetchMapData('${process.env.VILLA_API_BASE_URL}/karte', initMap)
 })
 </script>
 

@@ -43,7 +43,7 @@ watch(
     if (!newBoat?.id) return
     isVisible.value = true
     try {
-      const { data } = await axios.get(`http://localhost:3000/boats/${newBoat.id}.json`)
+      const { data } = await axios.get(`${process.env.VILLA_API_BASE_URL}/boats/${newBoat.id}.json`)
       boatData.value = { ...newBoat, ...data }
     } catch (e) {
       console.error('Failed to load boat details', e)

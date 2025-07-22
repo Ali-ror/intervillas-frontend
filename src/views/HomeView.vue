@@ -102,11 +102,11 @@ const sliderImages = [
 ]
 
 onMounted(async () => {
-  const response = await axios.get('http://localhost:3000/reviews.json', {params: {page: 1}});
+  const response = await axios.get('${process.env.VILLA_API_BASE_URL}/reviews.json', {params: {page: 1}});
   if(response) {
     reviews.value = response.data
   }
-  const res = await axios.get('http://localhost:3000/ferienhaus-cape-coral');
+  const res = await axios.get('${process.env.VILLA_API_BASE_URL}/ferienhaus-cape-coral');
   if(response) {
     villas.value = res.data
   }

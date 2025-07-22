@@ -64,7 +64,7 @@ const currentSlide = ref(0)
 const reviews = ref([]);
 
 onMounted(async () => {
-  const response = await axios.get('http://localhost:3000/reviews.json', {params: {page: 1}});
+  const response = await axios.get('${process.env.VILLA_API_BASE_URL}/reviews.json', {params: {page: 1}});
   if(response) {
     reviews.value = response.data
     console.log(reviews.value,'review')
